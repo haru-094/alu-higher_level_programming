@@ -9,7 +9,7 @@ class Square:
     class square
     """
 
-    def __init__(self, size=0, position=(0,0)):
+    def __init__(self, size=0, position=(0, 0)):
         """
         init the size and position
         """
@@ -46,7 +46,8 @@ class Square:
         """
         set the position value
         """
-        if (not isinstance(value, tuple) or len(value) != 2 or not all(isinstance(i, int) and i>=0 for i in value)):
+        if (not isinstance(value, tuple) or len(value) != 2 or
+                not all(isinstance(i, int) and i >= 0 for i in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
@@ -63,7 +64,7 @@ class Square:
         if self.__size == 0:
             print()
             return
-        
+
         print("\n" * self.__position[1], end="")
 
         hr_offest = " " * self.__position[0]
