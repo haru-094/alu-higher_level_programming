@@ -8,7 +8,6 @@ class Rectangle:
     """
     rectangle class
     """
-    
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
@@ -17,7 +16,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
-        Rectangle.number_of_instances +=1
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -71,11 +70,10 @@ class Rectangle:
 
     def __str__(self):
         """
-        returnt the string of rectangle 
+        return the string of rectangle
         """
         if self.width == 0 or self.height == 0:
             return ""
-
         rows = ["#" * self.width for _ in range(self.height)]
         return "\n".join(rows)
 
@@ -89,5 +87,5 @@ class Rectangle:
         """
         print msg for delete
         """
-        Rectangle.number_of_instances -+1
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
