@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+function to check of object
+"""
+
+
 def inherits_from(obj, a_class):
     """
     return true of object is instance

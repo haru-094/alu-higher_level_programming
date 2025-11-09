@@ -2,6 +2,8 @@
 """
 function to check of object
 """
+
+
 def lookup(obj):
     """
     return a list
