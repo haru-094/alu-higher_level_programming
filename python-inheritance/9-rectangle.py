@@ -6,6 +6,7 @@ Creating class will import from base geometry
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+
 class Rectangle(BaseGeometry):
     """
     class inheriting from BaseGemetry
