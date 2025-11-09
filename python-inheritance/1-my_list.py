@@ -4,7 +4,7 @@ Creating class
 """
 
 
-class Mylist(list):
+class MyList(list):
     """
     creating class mylist
     """
