@@ -6,7 +6,7 @@ Creating class
 
 class Mylist(list):
     """
-    list class
+    creating class mylist
     """
     def print_sorted(self):
         """
