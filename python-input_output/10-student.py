@@ -20,6 +20,7 @@ class Student:
         """
         return dict
         """
-        if (isinstance(attrs, list) and all(isinstance(item, str) for item in attrs)):
+        if isinstance(attrs, list) and all(
+                isinstance(item, str) for item in attrs):
             return {k: v for k, v in self.__dict__.items() if k in attrs}
-        return self.__dict__
+        return self.__dict__.copy()
