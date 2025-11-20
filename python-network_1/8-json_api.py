@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-script take the url
+script take the url and make request then get respond
 """
 
 import requests
@@ -13,14 +13,10 @@ if __name__ == "__main__":
 
     try:
         response = requests.post(url, data=data)
-        response.raise_for_status()
-        try:
-            result = response.json()
-            if result:
-                print(f"[{result.get('id')}] {result.get('name')}")
-            else:
-                print("No result")
-        except ValueError:
-            print("Not a valid JSON")
-    except requests.RequestException:
+        result = response.json()
+        if result:
+            print("[{}] {}".format(result.get('id'), result.get('name')))
+        else:
+            print("No result")
+    except ValueError:
         print("Not a valid JSON")
