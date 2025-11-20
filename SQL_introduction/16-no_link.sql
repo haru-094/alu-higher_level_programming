@@ -1,4 +1,5 @@
+-- getting record
 SELECT score, name
-FROM second_table name is not NULL
-    and name != ''
+FROM second_table name IS NOT NULL
+    AND name != ''
 ORDER BY score DESC;

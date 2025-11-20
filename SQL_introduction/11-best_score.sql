@@ -1,3 +1,4 @@
+-- get the record based on condation
 SELECT score, name
 FROM second_table
 WHERE
