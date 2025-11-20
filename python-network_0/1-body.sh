@@ -1,17 +1,4 @@
 #!/bin/bash
 # display the response
-
-if [ $# -ne 1 ]; then
-    echo "Usage: $0 URL"
-    exit 1
-fi
-
-url=$1
-
-response=$(curl -s -w "%{http_code}" "$url")
-body=${response::-3}
-status=${response: -3}
-
-if [ "$status" == "200" ]; then
-    echo "$body"
-fi
+[ $# -eq 1 ] || { echo "Usage: $0 URL"; exit 1; }
+rc=$(curl -s -L -o /dev/null -w "%{redirect_count}" "$1"); [ "$rc" -eq 0 ] && echo "no redirection" || echo "$rc redirection"
