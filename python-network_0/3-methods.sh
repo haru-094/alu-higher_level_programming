@@ -1,11 +1,3 @@
 #!/bin/bash
-# display the url and the option
-
-if [ $# -ne 1 ]; then
-    echo "Usage: $0 URL"
-    exit 1
-fi
-
-url=$1
-
-curl -s -X OPTIONS -i "$url" | grep -i Allow | cut -d' ' -f2-
+# Display all HTTP methods the server will accept
+curl -sI -X OPTIONS "$1" | grep -i Allow | cut -d' ' -f2-

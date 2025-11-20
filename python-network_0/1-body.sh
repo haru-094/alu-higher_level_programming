@@ -1,4 +1,3 @@
 #!/bin/bash
-# display the response
-[ $# -eq 1 ] || { echo "Usage: $0 URL"; exit 1; }
-rc=$(curl -s -L -o /dev/null -w "%{redirect_count}" "$1"); [ "$rc" -eq 0 ] && echo "no redirection" || echo "$rc redirection"
+# Display body of 200 status code response
+curl -sL -w "%{http_code}" -o /tmp/body "$1" | grep -q "200" && cat /tmp/body
