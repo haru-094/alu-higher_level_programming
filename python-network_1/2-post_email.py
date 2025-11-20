@@ -7,6 +7,9 @@ from urllib import request, parse
 import sys
 
 if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: {} URL email".format(sys.argv[0]))
+        exit(1)
     url = sys.argv[1]
     email = sys.argv[2]
 
